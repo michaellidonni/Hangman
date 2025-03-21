@@ -1,15 +1,15 @@
 const wordList = [
-    'gold', 
-    'luck', 
-    'clover', 
-    'rain', 
-    'charm', 
-    'parade', 
-    'leprechaun', 
-    'treasure', 
-    'celebration', 
-    'greenery', 
-    'shenanigans', 
+    'gold',
+    'luck',
+    'clover',
+    'rain',
+    'charm',
+    'parade',
+    'leprechaun',
+    'treasure',
+    'celebration',
+    'greenery',
+    'shenanigans',
     'tradition'
 ]
 
@@ -20,10 +20,20 @@ let wrongGuess = 0
 let guessedLetters = []
 const maxMistakes = 6
 
-function startGame(level){
+function startGame(level) {
     selectedWord = getRandomWord(level)
+
+    // Update difficulty display div
+    updateDifficultyDisplay(level)
+
+    //Create the placeholder for the selected word
+    displayedWord = '_'.repeat(selectedWord.length)
+    //Display the update word
+    document.getElementById('wordDisplay').textContent = displayedWord.split('').join(' ')
+
+
     // Hide difficulty selection and show game area & difficulty box
-    
+
     //Add d-none to the difficultySelection div
     document.getElementById('difficultySelection').classList.add('d-none')
     //remove d-none from diificultyBox & gameArea
@@ -42,3 +52,17 @@ function getRandomWord(level) {
     })
     return filteredWords[Math.floor(Math.random() * filteredWords.length)]
 }
+
+function updateDifficultyDisplay(level) {
+    let difficultyBox = document.getElementById('difficultyBox')
+
+    //Remove any difficulty classes (easy, medium, hard)
+    difficultyBox.classList.remove('easy', 'medium', 'hard')
+
+    //Set text & apply class dynamically using template literals
+    difficultyBox.textContent = `Difficulty ${level.charAt(0).toUpperCase() + level.slice(1)}`
+
+    //Apply the appropriate CSS style for chosen difficulty
+    difficultyBox.classList.add(level)
+}
+
