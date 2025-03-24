@@ -66,3 +66,34 @@ function updateDifficultyDisplay(level) {
     difficultyBox.classList.add(level)
 }
 
+
+function guessLetter() {
+    let inputField = document.getElementById('letterInput')
+    let guessedLetter = inputField.value.toLowerCase()
+
+    // Check if input is a valid letter (a-z)
+    if (!guessedLetter.match(/^[a-z]$/)) {
+        alert('Please enter a valid letter (A-Z)!')
+        inputField.value = ''
+        return
+    }
+
+    //Check if letter was already guessed using .includes()
+    if (guessedLetters.includes(guessedLetter)) {
+        alert(`You already gussed '${guessedLetter}'. Try a different letter!`)
+        inputField.value = ''
+        return
+    } else {
+        guessedLetters.push(guessedLetter)
+    }
+
+    if (selectedWord.includes(guessedLetter)) {
+        correctGuess(guessedLetter)
+    } else {
+        wrongGuess(guessedLetter)
+    }
+
+    inputField.value = ''
+    document.getElementById('letterInput').focus()
+
+}
