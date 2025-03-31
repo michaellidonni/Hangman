@@ -99,18 +99,15 @@ function guessLetter() {
 }
 
 function wrongGuess(guessedLetter) {
-    // Increment the number of wrong guesses
-    wrongGuesses++
-    //Add the guessed letter to the guessedLetters array
-    document.getElementById('wrongLetters').textContent += `${guessedLetter}`
+    wrongGuesses++ //increment the num of wrong guesses
+    document.getElementById('wrongLetters').textContent += ` ${guessedLetter}` //add the guessed letter to HTML div
 
-    document.getElementById('shamrock').src = `imgs/shamrock${6 - wrongGuesses}.png`
+    document.getElementById('shamrock').src = `imgs/shamrock${6 - wrongGuesses
+        }.jpg`
 
-
-    //Check to see if the num of wrong guesses === the maxMistakes if it is, call endGame(false)
     if (wrongGuesses === maxMistakes) {
         endGame(false)
-    }
+    } // check to see if  wrongGuesses === the maxMistakes if it is, call endGame(false)
 }
 
 function correctGuess(guessedLetter) {
@@ -140,6 +137,21 @@ function endGame(won) {
 }
 
 function restartGame() {
-    location.reload()
+    selectedWord = ''
+    displayedWord = ''
+    wrongGuesses = 0
+    guessedLetters = []
+    document.getElementById('wrongLetters').textContent = `Wrong Guesses: `
+
+    document.getElementById('difficultySelection').classList.remove('d-none')
+    document.getElementById('difficultyBox').classList.add('d-none')
+    document.getElementById('gameArea').classList.add('d-none')
+    document.getElementById('gameArea').classList.remove('d-block')
+    document.getElementById('difficultyBox').classList.remove('d-block')
 }
 
+document.getElementById('letterInput').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        guessLetter();
+    }
+});
