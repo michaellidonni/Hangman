@@ -130,9 +130,11 @@ function correctGuess(guessedLetter) {
 
 function endGame(won) {
     if (won === true) {
-        setTimeout(() => alert('Yay! You Won!'), 100)
+        document.getElementById('youWin').textContent = 'YOU WIN!'
+        document.getElementById('youWin').classList.remove('d-none')
     } else {
-        alert('You Lost! You Suck!')
+        document.getElementById('youLose').textContent = 'YOU LOSE'
+        document.getElementById('youLose').classList.remove('d-none')
     }
 }
 
@@ -148,6 +150,8 @@ function restartGame() {
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('gameArea').classList.remove('d-block')
     document.getElementById('difficultyBox').classList.remove('d-block')
+    document.getElementById('youLose').classList.add('d-none')
+    document.getElementById('youWin').classList.add('d-none')
 }
 
 document.getElementById('letterInput').addEventListener('keydown', function (event) {

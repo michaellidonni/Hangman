@@ -9,3 +9,35 @@
 .hard {
     background-color: red;
 }
+
+#youLose {
+    font-size: 296px;
+    color: red;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+    width: 100%;
+}
+
+#youWin {
+    font-size: 295px;
+    color: lime;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
