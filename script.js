@@ -19,6 +19,7 @@ let displayedWord = ''
 let wrongGuesses = 0
 let guessedLetters = []
 const maxMistakes = 6
+let score = 0
 
 function startGame(level) {
     selectedWord = getRandomWord(level)
@@ -99,6 +100,7 @@ function guessLetter() {
 }
 
 function wrongGuess(guessedLetter) {
+    document.getElementById('wrongAnswer').play()
     wrongGuesses++ //increment the num of wrong guesses
     document.getElementById('wrongLetters').textContent += ` ${guessedLetter}` //add the guessed letter to HTML div
 
@@ -111,6 +113,7 @@ function wrongGuess(guessedLetter) {
 }
 
 function correctGuess(guessedLetter) {
+    document.getElementById('correctAnswer').play()
     let newDisplayWord = ''
     for (let i = 0; i < selectedWord.length; i++) {
         if (selectedWord[i] === guessedLetter) {
@@ -131,10 +134,14 @@ function correctGuess(guessedLetter) {
 function endGame(won) {
     if (won === true) {
         document.getElementById('youWin').textContent = 'YOU WIN!'
+        document.getElementById('winSound').play()
         document.getElementById('youWin').classList.remove('d-none')
+        score++
+        document.getElementById("playerScore").innerText = score;
     } else {
         document.getElementById('youLose').textContent = 'YOU LOSE'
         document.getElementById('youLose').classList.remove('d-none')
+        document.getElementById('loseSound').play()
     }
 }
 

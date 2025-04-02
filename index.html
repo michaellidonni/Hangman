@@ -14,7 +14,11 @@
 </head>
 
 <body>
-    <main class="container text-center rounded-5">
+    <div class="d-flex justify-content-center align-items-center mb-3 mt-5 score ms-5">
+        <div>Player Score: </div>
+        <div id="playerScore" class="ms-2">0</div>
+    </div>
+    <main class="container text-center rounded-5">        
         <!-- Game Title -->
         <h1 class="mb-5">Shamrock Hangman</h1>
 
@@ -91,6 +95,10 @@
             <div class="col-12">
                 <div id="youLose" class="d-none"></div>
                 <div id="youWin" class="d-none"></div>
+                <audio id="winSound" src="sound/YouWin.mp3"></audio>
+                <audio id="loseSound" src="sound/YouLose.mp3"></audio>
+                <audio id="wrongAnswer" src="sound/wrongAnswer.mp3"></audio>
+                <audio id="correctAnswer" src="sound/correctAnswer.mp3"></audio>
             </div>
         </div>
 
