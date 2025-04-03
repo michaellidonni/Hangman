@@ -104,8 +104,8 @@ function wrongGuess(guessedLetter) {
     wrongGuesses++ //increment the num of wrong guesses
     document.getElementById('wrongLetters').textContent += ` ${guessedLetter}` //add the guessed letter to HTML div
 
-    document.getElementById('shamrock').src = `imgs/shamrock${6 - wrongGuesses
-        }.jpg`
+    document.getElementById('shamrock').src = `imgs/Hangman${6 - wrongGuesses
+        }.png`
 
     if (wrongGuesses === maxMistakes) {
         endGame(false)
@@ -159,6 +159,7 @@ function restartGame() {
     document.getElementById('difficultyBox').classList.remove('d-block')
     document.getElementById('youLose').classList.add('d-none')
     document.getElementById('youWin').classList.add('d-none')
+    document.getElementById('shamrock').src = `imgs/Hangman6.png`
 }
 
 document.getElementById('letterInput').addEventListener('keydown', function (event) {

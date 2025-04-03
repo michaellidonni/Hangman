@@ -48,3 +48,12 @@
     left: 0;
     font-size: 25px;
 }
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+#restartButton {
+    z-index: 1;
+}
