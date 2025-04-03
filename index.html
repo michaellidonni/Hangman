@@ -18,9 +18,10 @@
         <div>Player Score: </div>
         <div id="playerScore" class="ms-2">0</div>
     </div>
-    <main class="container text-center rounded-5">        
+    <main class="container text-center">        
         <!-- Game Title -->
-                <h1 class="mb-5">Shamrock Hangman</h1>
+         <div id="intro">
+                <h1 class="mb-5" id="title1">Shamrock Hangman</h1>
 
                 <!-- Difficulty Selection -->
                 <div id="difficultySelection" class="">
@@ -35,9 +36,13 @@
                         Hard
                     </button>
                 </div>
+            </div>
+                <h1 class="mb-5 d-none" id="title2">Shamrock Hangman</h1>
                 <div class="row">
                     <div class="col-6">
-                <!-- Difficulty Display Box (Hidden Until Selected) -->
+                <!-- Game Area -->
+                <div id="gameArea" class="mt-4 d-none">
+                                    <!-- Difficulty Display Box (Hidden Until Selected) -->
                  <div class="row">
                     <div class="col-6 mx-auto">
                 <div id="difficultyBox" class="mt-3 p-3 fw-bold d-none">
@@ -45,8 +50,6 @@
                 </div>
             </div>
             </div>
-                <!-- Game Area -->
-                <div id="gameArea" class="mt-4 d-none">
                     <!-- Word Display -->
                      <div class="row">
                         <div class="col-12 mb-3">
@@ -55,27 +58,28 @@
                      </div>
                     
                     <!-- Inputs for Guessing -->
-                     <div class="row">
-                        <div class="col-12 mb-3">
-                           <div>
-                        <input type="text" id="letterInput" maxlength="1" class="form-control d-inline-block w-auto text-center" placeholder="Guess a Letter"/>
-                        <button id="guessBtn" class="btn btn-warning" onclick="guessLetter()">Guess</button>
-                    </div> 
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <input type="text" id="letterInput" maxlength="1" 
+                                   class="form-control form-control-lg text-center mb-2 mb-md-0">
                         </div>
-                     </div>
+                        <div class="col-auto">
+                            <button id="guessBtn" class="btn btn-warning btn-lg" onclick="guessLetter()">Guess</button>
+                        </div>
+                    </div>
                     
         
                     <!-- Wrong Guess List -->
                      <div class="row">
                         <div class="col-12">
-                            <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses: </p>
-                        </div>a
+                            <p id="wrongLetters" class="fw-bold text-danger mt-3">Wrong Guesses: </p>
+                        </div>
                      </div>
                     
                      
         
                     <!-- Restart Button -->
-                     <div class="row">
+                    <div class="row">
                         <div class="col-12">
                            <div class="mt-5">
                         <button id="restartButton" class="btn btn-danger" onclick="restartGame()">Restart Game</button>
@@ -99,11 +103,11 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
-                        <img src="imgs/Hangman6.png" alt="Shamrock Health" id="shamrock" class="shamrock-img">
+                        <img src="imgs/Hangman6.png" alt="Shamrock Health" id="shamrock" class="shamrock-img img-fluid d-none">
                     </div>
                  </div>
             </div>
-         </div>
+            </div>
 
     </main>
     <footer>

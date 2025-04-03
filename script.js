@@ -43,6 +43,10 @@ function startGame(level) {
     //Add d-block to difficultyBox & gameArea 
     document.getElementById('gameArea').classList.add('d-block')
     document.getElementById('difficultyBox').classList.add('d-block')
+    document.getElementById('shamrock').classList.remove('d-none')
+    document.getElementById('title1').classList.add('d-none')
+    document.getElementById('title2').classList.remove('d-none')
+    document.getElementById('intro').classList.add('d-none')
 }
 
 function getRandomWord(level) {
@@ -159,7 +163,11 @@ function restartGame() {
     document.getElementById('difficultyBox').classList.remove('d-block')
     document.getElementById('youLose').classList.add('d-none')
     document.getElementById('youWin').classList.add('d-none')
+    document.getElementById('shamrock').classList.add('d-none')
     document.getElementById('shamrock').src = `imgs/Hangman6.png`
+    document.getElementById('title1').classList.remove('d-none')
+    document.getElementById('title2').classList.add('d-none')
+    document.getElementById('intro').classList.remove('d-none')
 }
 
 document.getElementById('letterInput').addEventListener('keydown', function (event) {

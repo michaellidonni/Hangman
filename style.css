@@ -1,13 +1,24 @@
+body {
+    background-color: #4CBB17;
+    color: white;
+}
+
 .easy {
     background-color: green;
+    border-radius: 20px;
+    border: black solid 2px;
 }
 
 .medium {
     background-color: yellow;
+    border-radius: 20px;
+    border: black solid 2px;
 }
 
 .hard {
     background-color: red;
+    border-radius: 20px;
+    border: black solid 2px;
 }
 
 #youLose {
@@ -40,6 +51,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    padding: 40px;
 }
 
 .score {
@@ -47,6 +62,10 @@
     top: 0;
     left: 0;
     font-size: 25px;
+    background-color: black;
+    border-radius: 20px;
+    border: white solid 2px;
+    padding: 20px;
 }
 
 img {
@@ -54,6 +73,21 @@ img {
     height: 400px;
 }
 
-#restartButton {
-    z-index: 1;
+#intro {
+    border-radius: 20px;
+    background-color: white;
+    padding: 150px;
+    color: black;
+}
+
+#gameArea {
+    margin-top: 15% !important;
+}
+
+#letterInput {
+    border: black solid 2px;
+}
+
+.btn {
+    border: black solid 2px;
 }
